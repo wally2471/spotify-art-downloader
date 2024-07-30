@@ -11,7 +11,7 @@ parser = argparse.ArgumentParser(
 )
 
 parser.add_argument("url")
-parser.add_argument("-r", "--resolution", type=int, choices=[640, 300, 64], default=64)
+parser.add_argument("-r", "--resolution", type=int, choices=[640, 300, 64], default=640)
 
 args = parser.parse_args()
 

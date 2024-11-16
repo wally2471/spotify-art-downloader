@@ -35,12 +35,12 @@ def download_spotify_art(embed_url: str, resolution: int):
         return
 
     try:
-        cover_art = page_json['props']['pageProps']['state']['data']['entity']['coverArt']['sources']
+        cover_art = page_json['props']['pageProps']['state']['data']['entity']['visualIdentity']['image']
     except KeyError as err:
         print(f"Failed to find cover_art object! Failed to find key { err }!")
-
+    
     for art in cover_art:
-        if art['width'] == resolution and art['height'] == resolution:
+        if art['maxWidth'] == resolution and art['maxHeight'] == resolution:
             print(f"Cover art url: { art['url'] }")
             return
 
